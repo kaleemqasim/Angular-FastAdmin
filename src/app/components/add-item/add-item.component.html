@@ -1,0 +1,12 @@
+<form [formGroup]="itemForm" (ngSubmit)="addItem()">
+    <input formControlName="title" type="text" class="form-control" placeholder="Enter title" />
+    <span *ngIf="title && title.invalid && title.touched">
+        Title is not valids
+    </span>
+    <br>
+    
+    Is Completed? 
+    <input formControlName="is_completed" type="checkbox" class="" />
+    <br>
+    <button [disabled]="itemForm.invalid" type="submit" class="btn btn-primary">Add Item</button>
+</form>
